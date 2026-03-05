@@ -1,73 +1,193 @@
-# Welcome to your Lovable project
+# 🔗 TrustChain Market
+### Escrow-Protected Campus Marketplace on Algorand
 
-## Project info
+TrustChain Market is a blockchain-powered campus marketplace that enables students to trade items securely using Algorand escrow payments.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+The platform introduces trust, transparency, and verifiable payments into student marketplaces through:
+- Escrow-protected transactions
+- Campus-verified wallet authentication
+- Blockchain-backed reputation
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+# 🚨 Problem
 
-**Use Lovable**
+Most campus trading currently happens through informal platforms such as:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- WhatsApp groups
+- Telegram channels
+- Instagram resale pages
 
-Changes made via Lovable will be committed automatically to this repo.
+These systems lack transaction security and create several problems:
 
-**Use your preferred IDE**
+- Fake payment screenshots
+- No escrow protection
+- No public transaction verification
+- No structured reputation system
+- Outsiders infiltrating student communities
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+As a result, students often hesitate to transact due to lack of trust and payment security.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+# 💡 Solution
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+TrustChain Market introduces a campus-restricted Web3 marketplace where students can trade securely.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+The platform ensures:
 
-# Step 3: Install the necessary dependencies.
-npm i
+- Secure escrow-based payments
+- Verified student participation
+- Immutable transaction records on blockchain
+- Reputation derived from completed transactions
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+This creates a closed-loop trust ecosystem for campus commerce.
 
-**Edit a file directly in GitHub**
+**TrustChain Market aims to introduce a trust layer into student marketplaces by enabling secure peer-to-peer trading through escrow-protected blockchain payments on Algorand.**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+# ⚙️ Core Features
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🔐 Escrow-Protected Payments
 
-## What technologies are used for this project?
+Buyer funds are temporarily locked in an escrow wallet until delivery confirmation.
 
-This project is built with:
+Transaction Flow: Buyer → Escrow Wallet → Seller
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
+Steps:
+
+1. Buyer connects wallet
+2. Buyer initiates purchase
+3. ALGO is transferred to escrow wallet
+4. Seller marks item delivered
+5. Buyer confirms receipt
+6. Escrow releases funds to seller
+
+This prevents payment fraud and non-delivery scams.
+
+---
+
+## 🎓 Campus-Verified Wallet Authentication
+
+Only verified students can participate in the marketplace.
+
+Process:
+
+1. Student signs up using college email
+2. Email is verified
+3. Wallet address is linked to user profile
+
+Only verified wallets can:
+- List items
+- Purchase items
+
+This prevents outsiders and anonymous scammers.
+
+---
+
+## ⭐ Reputation Badge System
+
+Trust is built through successful transaction history.
+
+After completed escrow transactions:
+
+- Seller transaction count increases
+- Reputation badge appears on the profile
+
+Example:
+
+Trusted Seller — 10+ successful deals
+
+Reputation is derived from blockchain-confirmed transactions.
+
+---
+
+# 🧱 System Architecture
+
+The platform is divided into three layers.
+
+## Frontend Layer
+
+Responsibilities:
+
+- Marketplace UI
+- Product listings
+- Wallet connection
+- Escrow transaction initiation
+- Transaction confirmation display
+
+Technology:
+
+- Next.js
 - Tailwind CSS
+- Pera Wallet Integration
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## Backend Layer
 
-## Can I connect a custom domain to my Lovable project?
+Responsibilities:
 
-Yes, you can!
+- Store product listings
+- Store wallet mapping
+- Track order status
+- Store reputation score
+- Verify transaction hash via Algorand SDK
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Technology options:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- Next.js API Routes
+- Firebase / Supabase
+
+---
+
+## Blockchain Layer
+
+Using:
+
+- Algorand TestNet
+- Algorand JavaScript SDK
+
+Responsibilities:
+
+- Handle ALGO transfer
+- Escrow wallet transaction holding funds
+- Release payment transaction
+- Provide immutable transaction hash proof
+
+---
+
+# 🔗 Escrow Architecture Flow
+
+User → Frontend (Next.js)
+
+Frontend → Wallet (Transaction Signing)
+
+Frontend → Backend (Order + Escrow Tracking)
+
+Backend → Algorand Network (Transaction Verification)
+
+---
+
+# ⚡ Why Algorand
+
+Algorand is well suited for this platform because it offers:
+
+- Very low transaction fees
+- Fast transaction finality
+- Energy-efficient consensus
+- Scalable infrastructure for micro-transactions
+
+These properties make it ideal for student-scale marketplaces.
+
+---
+
+# 🔮 Future Scope
+
+Potential future enhancements include:
+
+- Fully automated smart contract escrow
+- NFT-based student identity verification
+- Multi-campus marketplace expansion
+- Decentralized governance for campus trading
